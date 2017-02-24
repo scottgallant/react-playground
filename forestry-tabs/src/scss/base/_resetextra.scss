@@ -1,0 +1,55 @@
+// Forestry reset settings
+
+// Border on all elements for layout checking
+* {
+  // border: 1px solid pink;
+}
+
+// Box sizing on all elements
+html {
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+
+  // Improve text rendering across browsers
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-feature-settings: "liga" on;
+}
+
+*,*::before,*::after {
+    box-sizing:inherit;
+}
+
+// Remove margin on all text elements
+a,p,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+// Remove styling from all links
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+// Remove list styling
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Disable text selection
+:not(.editor) {
+  header, aside, .button, .editor-switch, .modal-toggle, .label {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;  /* Firefox all */
+    -ms-user-select: none;  /* IE 10+ */
+    user-select: none;  /* Likely future */
+
+    // Use normal cursor
+    cursor: default;
+
+  }
+}

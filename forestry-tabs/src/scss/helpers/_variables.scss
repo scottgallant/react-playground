@@ -1,0 +1,32 @@
+// Width of sidebar and logo section
+$sidebar-width: 240px;
+$sidebar-width-small: 160px;
+
+
+// Header height
+$header-height: 5rem;
+$header-height-small: 4rem;
+
+
+// Corner radius for modals and buttons
+$small-border-radius: .1rem;
+$border-radius: .15rem;
+$modal-padding: 1.5rem;
+
+
+// Gutters
+$v-space: 3rem;
+$h-space: 3rem;
+
+
+// Tooltips
+$tooltip-color: $dark-grey;
+$tooltip-text: $white;
+$tooltip-rounding: $border-radius;
+
+
+// Breakpoints
+$breakpoint-smallest: 600px;
+$breakpoint-small: 840px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;

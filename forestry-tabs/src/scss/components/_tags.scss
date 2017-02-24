@@ -1,0 +1,44 @@
+.react-tagsinput {
+  border-radius: $border-radius;
+  border: 1px dashed #cecece;
+  background: none;
+  padding: .5em .5em .14em .5em;
+  margin-bottom: 3em;
+
+  .react-tagsinput-tag {
+    background-color: $primary;
+    border: none;
+    border-radius: $border-radius;
+    color: $white;
+    font-family: $font-family-text;
+    font-size: $no-text;
+    font-weight: $font-weight-semibold;
+    padding: .4em .6em;
+  }
+
+  .react-tagsinput-input {
+    color: $dark-grey;
+    font-family: $font-family-text;
+    font-size: $no-text;
+    font-weight: $font-weight-normal;
+    width: auto;
+  }
+
+  .react-autosuggest__container {
+    display: inline-block;
+  }
+
+}
+
+.react-tagsinput--focused {
+  border-color: $primary;
+}
+
+.react-autosuggest__suggestion {
+  font-size: $md-text;
+  padding: 0 .5em;
+}
+
+.react-autosuggest__suggestion--focused {
+  background: $light-grey;
+}

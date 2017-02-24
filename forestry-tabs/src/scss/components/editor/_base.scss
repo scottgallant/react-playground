@@ -1,0 +1,102 @@
+@import "~@forestryio/editor/dist/editor.css";
+
+.pane-wrapper {
+  a {
+    border-bottom: 1px solid currentColor;
+    -webkit-transition: border-color 320ms ease;
+    transition: border-color 320ms ease;
+    &:hover { border-color: transparent; }
+  }
+}
+
+.medium-editor-insert {
+  > .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.5rem;
+    width: 2.4em;
+    height: 2.4em;
+    padding: 0.7em;
+    transition: transform .2s ease, background .2s ease, color .2s ease;
+    background: lighten($dark-grey, 10);
+    color: $light-grey;
+
+    &:hover {
+      color: $white;
+      background: lighten($dark-grey, 1.2);
+      transform: scale(1.05);
+    }
+
+  }
+}
+
+.media-overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+}
+
+.column.content-editor-header {
+  flex: 0 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: .75em 1em 0 1em;
+}
+
+.editor-controls {
+
+  &.editor-controls-sticky {
+    background: $light-grey;
+    z-index: 700;
+    transform: translateY($header-height) !important;
+  }
+
+}
+
+.editor-switch {
+  font-size: $sm-text;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: $medium-grey;
+  cursor: pointer;
+
+  .active {
+    color: $primary;
+
+    &:after {
+      color: $medium-grey;
+    }
+
+  }
+
+  .editor-name {
+
+    &:after {
+      content: '/';
+      margin: 0 .28em;
+    }
+
+    &:last-of-type:after {
+      content: '';
+      margin: 0;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-smallest) {
+
+  .editor-controls {
+
+    &.editor-controls-sticky {
+      transform: translateY($header-height-small) !important;
+    }
+
+  }
+
+}

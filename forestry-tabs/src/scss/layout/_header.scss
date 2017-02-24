@@ -1,0 +1,141 @@
+header {
+  background-color: $light-grey;
+  display: flex;
+  height: $header-height;
+  position: fixed;
+  width: 100%;
+
+  .header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 100%;
+
+    .logo-section {
+      display: flex;
+      flex: 0 0 $sidebar-width;
+      background-color: $dark-grey;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 1.95em;
+        max-width: 50%;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .site-title {
+      color: $dark-grey;
+      font-weight: $font-weight-bold;
+      margin: 0 2em 0 2em;
+    }
+
+  }
+
+  .header-right {
+    display: flex;
+    margin-right: 2em;
+    align-items: center;
+
+    .view-site-link {
+      margin-right: 2.7em;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .user-info {
+      display: flex;
+      font-size: $xsm-text;
+      font-weight: $font-weight-semibold;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      align-items: center;
+      cursor: pointer;
+
+      .user-name {
+        margin-right: .75em;
+      }
+
+    }
+
+  }
+
+}
+
+.mini-nav {
+  display: none;
+  margin-left: 1em;
+  cursor: pointer;
+  color: $dark-grey;
+  i.icon.icon-menu {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+
+  header {
+
+    .header-left {
+
+      .logo-section {
+        flex: 0 $sidebar-width-small;
+
+        img {
+          max-width: 60%;
+        }
+
+      }
+      .site-title { border: 0; }
+
+    }
+
+    .header-right {
+
+      .system-status {
+        margin-right: 2.25em;
+
+        &:after {
+          left: 2.5em;
+        }
+
+      }
+
+      .user-info { display: none; }
+
+    }
+
+  }
+
+  .mini-nav { display: block; }
+
+  main aside.sidebar {
+    flex: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-smallest) {
+
+  header {
+    height: $header-height-small;
+
+    .header-left {
+      .button { display: none; }
+    }
+
+    .header-right {
+      .button { display: none; }
+    }
+
+  }
+
+}

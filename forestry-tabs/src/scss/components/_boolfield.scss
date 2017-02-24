@@ -1,0 +1,12 @@
+.column.boolfield {
+  display: flex;
+
+  label.label.boolfield {
+    font-size: $no-text;
+    color: $dark-grey;
+    font-weight: $font-weight-semibold;
+    margin: 0 1em 0 0;
+    line-height: 2em;
+  }
+
+}

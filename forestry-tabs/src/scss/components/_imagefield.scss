@@ -1,0 +1,40 @@
+.no-image-container {
+  height: 200px;
+  background: $light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .button { align-self: center; }
+}
+
+.field--single-image {
+
+  > .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $light-grey;
+    border-radius: $border-radius;
+
+    .button {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .delete {
+      display: none;
+    }
+
+    &:hover {
+      img { opacity: .25; }
+      .button { display: block; }
+      .delete { display: block; }
+    }
+
+  }
+
+}

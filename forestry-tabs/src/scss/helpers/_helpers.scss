@@ -1,0 +1,15 @@
+// Code syntax highlighter
+
+// Use <pre> around <code> element for block codes
+code.hljs {
+  font-size: 13px;
+  font-family: 'Roboto Mono';
+  background-color: $light-grey;
+}
+
+// Inline code
+p > code.hljs {
+  display: inline;
+  padding: 0 .5em;
+  white-space: nowrap;
+}

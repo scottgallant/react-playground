@@ -1,0 +1,43 @@
+// Base typography
+body {
+  background-color: $white;
+  color: $dark-grey;
+  font-family: $font-family-text;
+  font-weight: normal;
+  font-size: $base-font-size;
+  letter-spacing: $base-letter-spacing;
+
+  // Selection color
+  ::-moz-selection { background: lighten($primary, 40); color: $dark-grey; }
+  ::selection { background: lighten($primary, 40); color: $dark-grey; }
+
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background: $light-grey;
+}
+
+a {
+  transition: color 320ms ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+p > a {
+  border-bottom: 1px solid currentColor;
+  transition: border-color 320ms ease;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+}
+
+a > img { border: 0; }
+
+.hidden { display: none !important; }

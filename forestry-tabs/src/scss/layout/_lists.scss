@@ -1,0 +1,233 @@
+.column.list {
+  border-bottom: 1px solid $light-grey;
+  padding: 1em;
+  font-size: $no-text;
+  text-transform: uppercase;
+
+  span.date {
+    margin-right: 1em;
+    font-weight: $font-weight-semibold;
+    color: $medium-grey;
+  }
+
+}
+
+// Todo: Used for 3 different content types. Rename.
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .list-headers {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1em 1em 1em;
+
+    p.list-header {
+      flex: 1;
+      font-size: $xsm-text;
+      text-transform: uppercase;
+      color: darken($light-grey, 20);
+
+      &:first-child { flex: 0 75%; }
+
+    }
+
+  }
+
+  .post-item, .folder-item {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid $light-grey;
+    padding: 1.5em 1em;
+
+    .title {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      padding-right: 1em;
+
+      h3 {
+        font-size: $lg-text;
+        font-weight: 500;
+        padding-bottom: .2em;
+        text-transform: none;
+        cursor: pointer;
+
+        svg {
+          margin-right: .5em;
+        }
+
+      }
+
+      span.last-edited {
+        font-size: $xsm-text;
+        text-transform: uppercase;
+        color: darken($light-grey, 35);
+        letter-spacing: .05em;
+      }
+
+      &.draft {
+        padding-left: 1.5em;
+
+        &:before {
+          display: block;
+          position: absolute;
+          content: 'draft';
+          top: 1.8em;
+          left: -1.8em;
+          background-color: $light-grey;
+          color: $dark-grey;
+          transform: rotate(-90deg);
+          font-size: $xxsm-text;
+          font-weight: $font-weight-semibold;
+          text-transform: uppercase;
+          letter-spacing: .1em;
+          text-align: center;
+          padding: .25em .8em;
+        }
+
+      }
+
+      &.error {
+        padding-left: 1.5em;
+
+        &:before {
+          display: block;
+          position: absolute;
+          content: 'error';
+          top: 1.8em;
+          left: -1.8em;
+          background-color: $warning;
+          color: $white;
+          transform: rotate(-90deg);
+          font-size: $xxsm-text;
+          font-weight: $font-weight-semibold;
+          text-transform: uppercase;
+          letter-spacing: .1em;
+          text-align: center;
+          padding: .25em .8em;
+        }
+
+      }
+
+    }
+
+    .action {
+      flex: 0 0 25%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      opacity: .2;
+
+      .button { width: 90px; }
+
+      .delete {
+        opacity: .35;
+        margin-left: 1em;
+        transition: opacity 320ms ease;
+
+        &:hover {
+          opacity: 1;
+        }
+
+      }
+
+    }
+
+    .mini-action {
+      display: none;
+    }
+
+    .mini-action-bar {
+      display: none;
+      height: auto;
+      flex: 1 100%;
+      margin: 1.5em 0 .5em 0;
+      transition: all 250ms ease;
+
+      .button {
+        flex: 1;
+        margin-right: 2em;
+        &:last-of-type { margin-right: 0; }
+      }
+
+    }
+
+    &:hover {
+      background-color: $lighter-grey;
+      cursor: pointer;
+      .action {
+        opacity: 1;
+      }
+
+      // Adjust draft tag color when hovering list item
+      & > .draft:before { background: darken($light-grey, 5); }
+      & > .mini-action-bar > .button.secondary {
+        border-color: darken($lighter-grey, 10);
+        &:hover { border-color: $warning; }
+      }
+
+    }
+
+  }
+
+  .folder-item {
+    background-color: $lighter-grey;
+
+    .title {
+
+    }
+
+    .action {
+      opacity: .5;
+      flex: 0 0 25%;
+
+      .delete {
+        margin-left: 0;
+      }
+
+    }
+
+    &:hover { background-color: darken($lighter-grey, 2); }
+
+  }
+
+}
+
+.fixed-footer-button { display: none; }
+
+@media screen and (max-width: $breakpoint-smallest) {
+
+  .list-header.action { display: none; }
+
+  .list {
+    padding-bottom: 6em;
+
+    .post-item, .folder-item {
+
+      .action { display: none; }
+
+      .title { flex: 1 80%; }
+
+      .mini-action {
+        display: block;
+        flex: 1;
+        text-align: right;
+      }
+
+      .mini-action.expanded + .mini-action-bar {
+        display: flex;
+      }
+
+    }
+
+  }
+
+  .fixed-footer-button { display: block; }
+
+}

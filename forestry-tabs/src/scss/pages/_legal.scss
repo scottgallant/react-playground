@@ -1,0 +1,19 @@
+.container.legal {
+  max-width: 700px;
+
+  p { margin-bottom: 2em; }
+
+  a {
+    border-bottom: 1px solid $dark-grey;
+    padding-bottom: .02em;
+    transition: border-color 320ms ease;
+    &:hover { border-color: transparent; }
+  }
+
+  ul, li {
+    list-style: inherit;
+    padding: inherit;
+    margin: inherit;
+  }
+
+}

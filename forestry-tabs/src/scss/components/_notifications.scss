@@ -1,0 +1,156 @@
+// The circle indicator
+.system-status {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 3.25em;
+
+  // Vertical  border
+  &:after {
+    position: absolute;
+    content: '';
+    height: 3em;
+    width: 1px;
+    left: 2.5em;
+    top: -1em;
+    background-color: lighten($medium-grey, 15);
+  }
+
+  .activity-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -1em;
+    right: -1em;
+    width: 320px;
+    max-width: 70vw;
+    padding: 1em;
+    border-radius: $border-radius;
+    background-color: $white;
+    box-shadow:  0 15px 50px -20px rgba(0,0,0,.25);
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+
+    &.expanded {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .activity-container--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1em;
+    }
+
+    .activity-title {
+      font-size: $xsm-text;
+      display: inline-block;
+      padding: 0;
+    }
+
+    .activity-container--close {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .activity-list {
+      overflow: auto;
+      max-height: 60vh;
+    }
+
+    .activity-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: .6em 0;
+      border-bottom: 1px solid $light-grey;
+
+      &.hero {
+        padding: 2em 0;
+        justify-content: center;
+        text-align: center;
+
+        .activity-item--title { font-weight: $font-weight-semibold; }
+
+        .indicator {
+          align-self: center;
+          margin-bottom: .8em;
+        }
+
+      }
+
+      &:last-of-type { border: 0; }
+
+    }
+
+    .activity-item--left {
+      flex: 0 0 90%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .activity-item--right { margin-left: auto; }
+
+    .activity-item--title {
+      line-height: 1.58;
+      font-weight: $font-weight-normal;
+    }
+
+    .activity-item--time {
+      font-size: $xxsm-text;
+      text-transform: uppercase;
+      color: $medium-grey;
+      font-weight: $font-weight-semibold;
+      padding-top: .75em;
+    }
+
+    .activity-item--status {
+      display: block;
+      width: .5em;
+      height: .5em;
+      border-radius: .25em;
+
+      &.success { background: $primary; }
+      &.error { background: $warning; }
+
+    }
+
+    .activity-item--error {
+      width: 100%;
+      background: $light-grey;
+      border-radius: $border-radius;
+      font-size: $xxsm-text;
+      font-weight: $font-weight-normal;
+      padding: .5em;
+      text-align: center;
+      margin-top: 1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s ease;
+      &:hover { background: darken($light-grey, 5); }
+    }
+
+  }
+
+}
+
+// Notification count
+.indicator--unread-count {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -1.25em;
+  right: -1.25em;
+  height: 1.7em;
+  min-width: 1.7em;
+  border-radius: 1em;
+  background: #282828;
+  color: white;
+  font-size: 0.54rem;
+  font-weight: 700;
+  text-align: center;
+  padding: .55em;
+}

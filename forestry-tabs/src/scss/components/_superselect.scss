@@ -1,0 +1,50 @@
+.r-ss-wrap {
+
+  .r-ss-trigger {
+    padding-bottom: .5em;
+    border-bottom: 1px solid $lighter-grey;
+    outline: none;
+    position: relative;
+
+    &:after {
+      display: block;
+      content: '';
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: url('~@forestryio/icons/icons/chevron-down.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+  }
+
+  // Turn off SS features that we're not using
+  i.r-ss-magnifier {
+    display: none;
+  }
+
+  .r-ss-options-wrap {
+    max-height: 240px;
+    overflow: auto;
+  }
+
+  .r-ss-dropdown-option {
+    padding: 1em 0.5em;
+    border-bottom: 1px solid $light-grey;
+    outline: none;
+
+    &:focus { background: $lighter-grey; }
+
+    // Currently selected option
+    &.r-ss-selected { font-weight: $font-weight-bold; }
+  }
+
+  .r-ss-search-wrap {
+    margin: 1em 0;
+  }
+
+}

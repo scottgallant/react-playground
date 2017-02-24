@@ -1,0 +1,130 @@
+.column.gallery-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 1em;
+
+  > * { display: flex; align-items: center; }
+
+  span.label {
+    margin: 0;
+  }
+
+  .add-new-image {
+    font-size: $no-text;
+    cursor: pointer;
+    margin-left: auto;
+
+    span { margin-left: .5em; }
+
+  }
+
+}
+
+.row.gallery > li {
+  flex: 0 0 50%;
+  margin-bottom: 2em;
+  margin-left: -1em;
+  cursor: move;
+
+  .column.thumbnail {
+    min-height: 120px;
+    height: 100%;
+  }
+
+  .image-upload {
+    height: 100%;
+    > * { height: 100%; }
+  }
+
+  .dragdrop-field {
+    background-color: transparent;
+    height: 100%;
+    padding: 0;
+
+    &:before,&:after {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      background-color: darken($lighter-grey, 2);
+    }
+
+  }
+
+  .image-container {
+    position: relative;
+    line-height: 0;
+
+    .thumbnail-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($light-grey, .8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 160ms ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        opacity: 1;
+        border: 1px dashed $dark-grey;
+      }
+
+      i.icon-delete {
+        position: absolute;
+        display: block;
+        width: 35px;
+        text-align: center;
+        line-height: 2em;
+        height: 35px;
+        top: 0;
+        right: 0;
+        opacity: .5;
+
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+
+      }
+
+      .button {
+        align-self: center;
+      }
+
+    }
+
+    img {
+      width: 100%;
+      height: 200px !important; // @itsnwa this was being overridden by an !important style in _image.scss
+      object-fit: cover;
+      object-position: center;
+    }
+
+  }
+
+}
+
+.row.gallery {
+  flex-wrap: wrap;
+  padding-bottom: .5em;
+  & + .row.gallery {
+    margin-top: -.5em;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  .row.gallery > li {
+    flex: 0 0 25%;
+
+    .drop-info > h3 {
+      margin: 0 20px; // @itsnwa the text was pressed up against the border when approaching the largest breakpoint
+    }
+  }
+}

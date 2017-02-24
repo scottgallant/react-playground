@@ -1,0 +1,57 @@
+.container.settings {
+  max-width: 640px;
+  padding-bottom: 6em;
+
+  h1 { margin-bottom: 1em; }
+
+  .settings--save-button { width: 100%; }
+
+  .field--single-image {
+
+     .image-upload {
+        margin: auto;
+        width: auto;
+      }
+
+    .image-container {
+      max-width: 100%;
+      background: $dark-grey;
+      color: $dark-grey;
+      padding: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .image-overlay {
+        top: 0;
+        left: 0;
+      }
+
+      .thumbnail-overlay > .button {
+        color: $white;
+        border-color: $medium-plus-grey;
+      }
+
+      .thumbnail-overlay > .button.secondary:hover {
+        border-color: $light-grey;
+      }
+
+      img {
+        width: auto;
+        max-height: 57px;
+        max-width: 300px;
+        display: block;
+        margin: auto;
+      }
+
+    }
+
+  }
+
+  .modal.image-details {
+    .image-container {
+      background: $dark-grey;
+    }
+  }
+
+}

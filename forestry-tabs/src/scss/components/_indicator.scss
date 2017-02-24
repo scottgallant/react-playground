@@ -1,0 +1,24 @@
+.indicator {
+  border: 2px solid $medium-grey;
+  border-radius: 100%;
+  cursor: pointer;
+
+  height: 16px;
+  width: 16px;
+
+  &.thinking {
+    border-top-color: $dark-grey;
+    -webkit-animation: loaderSpin 1s infinite linear;
+    animation: loaderSpin 1s infinite linear;
+  }
+
+  &.success { border-color: $primary; }
+
+  &.error { border-color: $warning; }
+
+}
+
+@keyframes loaderSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

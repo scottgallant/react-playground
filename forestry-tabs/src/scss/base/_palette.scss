@@ -1,0 +1,19 @@
+// Brand
+$primary:         rgb(33, 224, 158);
+$primary-light:   lighten($primary, 10);
+$primary-medium:  darken($primary, 5);
+$primary-dark:    darken($primary, 10);
+
+// Greyscale
+$light-grey: rgb(243, 243, 243);
+$lighter-grey: rgb(247, 247, 247);
+$medium-grey: darken($light-grey, 20);
+$medium-plus-grey: darken($medium-grey, 30);
+$dark-grey: rgb(40, 40, 40);
+
+// Warning
+$warning: rgb(243, 127, 127);
+
+// Base
+$black: rgb(28, 28, 28);
+$white: rgb(255, 255, 255);

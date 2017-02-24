@@ -1,0 +1,284 @@
+.main-content {
+
+  .form.edit-page {
+    display: flex;
+    flex-direction: column;
+    background: $lighter-grey;
+
+    // Remove whitespace under form section
+    &.chunks { min-height: 100vh; }
+
+    .form-group {
+      border: 1px solid lighten($medium-grey, 12);
+
+      > .label {
+        background: $lighter-grey;
+      }
+    }
+
+    .row.edit-page--top {
+      padding-top: 2em;
+      padding-bottom: 2em;
+      width: 100%;
+      max-width: 1400px;
+      align-self: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+
+      .column.edit--fields-container {
+        flex: 1;
+        padding: 0 1em 0 2em;
+      }
+
+      .column.edit-action {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 0 0 17rem;
+        order: 1;
+        padding-right: 2em;
+
+        .button {
+          width: 100%;
+          margin-bottom: 1em;
+          align-self: flex-end;
+          &:first-of-type { margin-left: 0; }
+          &:last-of-type { margin-right: 0; }
+        }
+
+        hr {
+          width: 100%;
+          margin: .75em 0;
+          align-self: flex-end;
+          background: rgb(234, 234, 234);
+        }
+
+        .draft {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          span {
+            margin-right: 1em;
+            font-size: $sm-text;
+            text-transform: uppercase;
+          }
+
+        }
+
+        .unsaved-changes {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+          background: darken($light-grey, 2);
+          border-radius: $border-radius;
+          padding: 1.2rem;
+          cursor: pointer;
+          transition: transform 200ms ease;
+
+          &:hover {
+            transform: scale(1.02);
+          }
+
+          .unsaved-changes--message {
+            font-size: $sm-text;
+            margin-bottom: 1em;
+            color: $medium-plus-grey;
+          }
+
+          .unsaved-changes--discard {
+            color: $dark-grey;
+            width: auto;
+            margin-bottom: 0;
+            align-self: center;
+            font-size: $sm-text;
+            font-weight: $font-weight-semibold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .undo-icon {
+              margin-right: .35em;
+            }
+
+          }
+
+        }
+
+        a.delete {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 100%;
+          text-align: center;
+          font-size: $xxsm-text;
+          font-weight: $font-weight-bold;
+          text-transform: uppercase;
+          color: $medium-plus-grey;
+          margin-top: .5em;
+          margin-bottom: 1.25em;
+          cursor: pointer;
+          border: 0;
+
+          > * {
+            margin-left: .5em;
+          }
+
+          &:hover { color: $warning; }
+
+        }
+
+        .frontmatter {
+          padding: 0;
+          flex: none;
+          margin-bottom: 0;
+          width: 100%;
+        }
+
+      }
+
+      .switch {
+        background: darken($light-grey, 3);
+      }
+
+    }
+
+  }
+
+}
+
+.column.text-right {
+  justify-content: flex-end;
+}
+
+
+// Field types
+
+// Single image
+.field--single-image {
+  span.label { margin-left: 0; }
+
+  .image-container {
+    max-width: 500px;
+
+    img { width: 100%; }
+
+    .delete {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .main-content {
+    .form.edit-page {
+      .row.edit-page--top {
+
+        .column.edit-action {
+          flex: 0 0 13rem;
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .main-content {
+    .form.edit-page {
+      .row.edit-page--top {
+
+        .column.edit-action {
+          flex: 0 0 13rem;
+        }
+
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-smallest) {
+
+  .main-content {
+    .form.edit-page {
+      .row.edit-page--top {
+        padding-top: 0;
+        flex-wrap: wrap;
+
+        .column.edit-action {
+          flex: 0 0 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          order: -1;
+          padding: 2em;
+
+          & > * { max-width: 100% !important; }
+
+          .button {
+            width: 50%;
+
+            &.primary {
+              order: 0;
+              border-radius: $border-radius 0 0 $border-radius;
+            }
+
+            &.secondary {
+              order: 1;
+              border-radius: 0 $border-radius $border-radius 0;
+              border-color: $primary;
+              border-left: 0;
+              &:hover { border-color: $primary-medium; }
+            }
+
+          }
+
+          .draft {
+            order: 3;
+            width: 50%;
+            justify-content: center;
+            border-right: 1px dotted lighten($medium-grey, 10);
+          }
+
+          a.delete {
+            order: 3;
+            width: 50%;
+            align-self: flex-start;
+          }
+
+          hr.first   { order: 2; }
+          hr.second  { order: 4; }
+          hr.last    { display: none; }
+
+          .button--notification { order: 5; }
+
+          .unsaved-changes {
+            order: 5;
+          }
+
+          .frontmatter, .missing-extra-fields {
+            display: none;
+          }
+
+        }
+
+        .column.edit--fields-container {
+          flex: 0 0 100%;
+          padding-right: 2em;
+        }
+
+      }
+    }
+  }
+
+}

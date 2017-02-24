@@ -1,0 +1,50 @@
+// Image details
+
+.image-upload {
+  flex-direction: column;
+  width: 100%;
+  max-width: 460px;
+
+  .image-container {
+    position: relative;
+    min-height: 200px; // Todo make variable _imagefield.scss > .no-image-container.height
+
+    .image-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($white, 0.8);
+      opacity: 0;
+      transition: all 350ms;
+
+      .delete {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+      }
+
+      .button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-color: $medium-grey;
+
+        &:hover { border-color: $dark-grey; }
+
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+    }
+
+    img {
+      height: 100% !important;
+    }
+
+  }
+}
+

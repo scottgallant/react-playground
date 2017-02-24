@@ -1,0 +1,28 @@
+.breadcrumb {
+  margin-left: 1.5em;
+  font-size: $sm-text;
+
+  span {
+    text-transform: uppercase;
+
+    &:hover {
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+    }
+
+    &.active {
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+    }
+
+    &:before, &:after {
+      margin: 0 .5em 0 .8em;
+    }
+
+    &:after {
+      content: '/';
+    }
+
+  }
+
+}

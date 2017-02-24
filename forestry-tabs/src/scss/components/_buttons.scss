@@ -1,0 +1,247 @@
+input.button, button.button, .button {
+  font-size: $xxsm-text;
+  text-align: center;
+  font-weight: 700;
+  padding: 1.4em 1.8em;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: background-color 350ms ease, border-color 350ms ease;
+  display: inline-block;
+  outline: none;
+
+  // Show pointer on all buttons
+  &:hover { cursor: pointer; }
+
+  // Primary
+  &.primary {
+    color: $white;
+    background-color: $primary;
+
+    &:hover {
+      background-color: $primary-medium;
+    }
+
+    &:active {
+      background-color: $primary-dark;
+    }
+
+  }
+
+  // Secondary
+  &.secondary {
+    color: $dark-grey;
+    border: 1px solid darken($light-grey, 10);
+    background: none;
+
+    &:hover {
+      border: 1px solid $dark-grey;
+    }
+
+    &:active {
+      border-color: $black;
+    }
+
+  }
+
+  &.subtle {
+    color: $dark-grey;
+    background: none;
+    margin-top: 1em;
+   
+    &:hover {
+      border: 1px solid darken($light-grey, 10)
+    }
+
+    &:active {
+      border-color: $black;
+    }
+
+  }
+
+  // Warning
+
+  // Primary
+  &.primary.warning {
+    color: $white;
+    background-color: $warning;
+
+    &:hover {
+      background-color: darken($warning, 5);
+    }
+
+  }
+
+  // Secondary
+  &.secondary.warning {
+    color: $dark-grey;
+    border: 1px solid $light-grey;
+
+    &:hover {
+      color: darken($warning, 10);
+      border: 1px solid $warning;
+    }
+
+  }
+
+  // Disabled
+  &:disabled, &.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+  // Button sizes
+  &.big { padding: 1.4em 3em; font-size: $sm-text; }
+  &.small { padding: .8em 1.2em; }
+
+
+  // Loading
+  &.loading {
+    opacity: 1;
+    position: relative;
+
+    &.primary {
+      color: transparent;
+
+      &:hover {
+        background: $primary;
+        cursor: progress;
+      }
+
+      &:before {
+        border: 2px solid rgb(0, 218, 144);
+        border-top-color: $white;
+      }
+
+    }
+
+    &.secondary {
+      color: transparent;
+
+      &:before {
+        border: 1px solid $light-grey;
+        border-top-color: $dark-grey;
+      }
+
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      border-radius: 100%;
+
+      height: 18px;
+      width: 18px;
+
+      top: 50%;
+      left: 50%;
+
+      -webkit-animation: buttonLoader 1s infinite linear;
+      animation: buttonLoader 1s infinite linear;
+
+      @keyframes buttonLoader {
+        0%   { transform: translate(-50%,-50%) rotate(0deg); }
+        100% { transform: translate(-50%,-50%) rotate(360deg); }
+      }
+
+    }
+
+  }
+
+
+}
+
+.button-group {
+  display: flex;
+
+  .button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .button + .button {
+    margin-left: 2em;
+  }
+
+}
+
+.column .button {
+  align-self: flex-start;
+}
+
+input.modal-button, .modal-button {
+  border-radius: 0 0 $border-radius $border-radius;
+  padding: 1.5em;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: $no-text;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 350ms ease;
+  border: none;
+
+  &.success {
+    background-color: $primary;
+    color: $white;
+
+    &:hover { background-color: $primary-medium; }
+
+  }
+
+  &.error {
+    background-color: $warning;
+    color: $white;
+    pointer-events: none;
+  }
+
+  &.neutral {
+    background-color: $medium-grey;
+    color: $white;
+
+    &:hover { background-color: darken($medium-grey, 5); }
+
+  }
+
+}
+
+// Fixed footer button
+.fixed-footer-button {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: $no-text;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 350ms ease;
+  padding: 1.5em;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0;
+
+  &.success {
+    background-color: $primary;
+    color: $white;
+
+    &:hover { background-color: $primary-medium; }
+
+  }
+
+}
+
+aside.sidebar.expanded ~ .main-content > .fixed-footer-button {
+  transform: translate(0, 100%);
+}
+.button--notification {
+  text-align: center;
+  width: 100%;
+  padding: 0 0 1em 0;
+  font-size: .75em;
+
+  &.success { color: darken($primary, 10); }
+  &.warning { color: $warning; }
+  &.neutral { color: $medium-plus-grey; }
+
+}

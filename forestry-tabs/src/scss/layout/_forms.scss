@@ -1,0 +1,126 @@
+.form-group, .form-field {
+  margin: 0 0 $v-space 0;
+}
+
+.form-group {
+  border: 1px solid $light-grey;
+  border-radius: $border-radius;
+  padding: 1em;
+  position: relative;
+
+  > .label {
+    background: $white;
+    position: absolute;
+    top: -1.4em;
+    left: -1.1em;
+    padding: 1em;
+
+    + * {
+      margin-top: 2.5em;
+    }
+
+  }
+
+}
+
+hr.whitespace {
+  margin: 1.5em auto;
+}
+
+// General form styling
+input, textarea, select {
+  position: relative;
+  width: 100%;
+  padding: 0 0 .5rem 0;
+  border: 0;
+  background: none;
+  border-bottom: 1px dashed #cecece;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  letter-spacing: $base-letter-spacing;
+  transition: border-color 250ms ease;
+  font-weight: $font-weight-normal;
+
+  &.h1 { font-size: $xl-text; }
+
+  &:focus { border-color: $primary; }
+
+  // Placeholder text
+  &:placeholder-shown {
+    color: $medium-grey;
+  }
+
+}
+
+
+// Field states
+.form-field {
+
+  // Warning
+  &.error {
+    input, textarea, select {
+      border-color: $warning;
+      &:focus { border-color: $warning; }
+    }
+
+  }
+
+  .form-error {
+    font-size: $sm-text;
+    font-style: italic;
+    color: $warning;
+    margin-top: .5em;
+  }
+
+}
+
+
+// Form description
+.form-description {
+  margin-bottom: 1em;
+  color: $medium-plus-grey;
+  font-size: .85em;
+  font-style: italic;
+}
+
+
+// Textarea
+textarea {
+  resize: vertical;
+  line-height: 1.58;
+}
+
+
+// Select
+.select-wrapper {
+  position: relative;
+
+  &:after {
+    font-family: 'Forestry';
+    content: '\f016';
+    color: $dark-grey;
+    position: absolute;
+    display: inline-block;
+    top: .25em;
+    right: 0;
+    pointer-events: none;
+    transform: rotate(90deg);
+  }
+
+  select {
+
+  }
+
+}
+
+
+.switch input, .switch span.label, .switch label, input[type="button"] {
+  margin-bottom: 0;
+}
+
+
+// Repositioned the datepicker
+.rdtPicker {
+  top: 1.75rem;
+}

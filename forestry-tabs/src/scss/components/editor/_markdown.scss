@@ -1,0 +1,96 @@
+.pane-wrapper.markdown {
+  background-color: white;
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 2em 2em 0 2em;
+  height: 100%;
+
+  // Remove list styling
+  ol, ul, li, .cm-variable-2 {
+    list-style: inherit;
+    padding: 0 .25em;
+    margin: 0em 1.25em;
+  }
+
+  // Spacing
+  h1,h2,h3,h4,h5,h6,p,span,blockquote,ul,ol,figure {
+    margin-bottom: 2rem;
+  }
+
+  .CodeMirror {
+    background: white;
+    color: #333333;
+    height: 100%;
+    max-width: calc(1400px - 4em);
+    margin: 0 auto;
+
+    pre {
+      padding: 0;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.58;
+    }
+
+    .CodeMirror-code {
+      padding-bottom: calc(90vh - 6em);
+    }
+
+  }
+
+  .CodeMirror-activeline-background {
+    background: white;
+  }
+
+
+  .CodeMirror-gutters {
+    display: none;
+  }
+
+  .CodeMirror-lines {
+    padding: 0;
+  }
+
+  .CodeMirror-linenumber { display: none; }
+
+  .CodeMirror-selected {
+    background-color: #ededed !important;
+  }
+
+  // Content styling
+
+  .cm-header {
+    color: $dark-grey;
+
+    &.cm-header-1 { font-size: 1.75em; }
+    &.cm-header-2 { font-size: 1.25em; }
+
+  }
+
+  .cm-comment.cm-header {
+    font-size: 1em;
+    color: #999988;
+    font-weight: normal;
+  }
+
+  .cm-link, .cm-tag, .cm-attribute { color: $dark-grey; }
+  .cm-variable-2 { color: $dark-grey; }
+
+}
+
+
+// Syntax theme
+
+.cm-s-forestry {
+  .cm-atom { color: null; }
+  .cm-number { color: null; }
+  .CodeMirror-lines { padding: 8px 0; }
+  .CodeMirror-selected { background: #BCD5FA; }
+  .CodeMirror-activeline-background { background: rgba(0, 0, 0, 0.12); }
+  .cm-comment { font-style: normal; color: #999988; }
+  .CodeMirror-linenumber { color: italic; }
+  .cm-string { color: $medium-plus-grey; }
+  .cm-property { color: null; }
+  .cm-keyword { color: null; }
+  .cm-operator { color: null; }
+}

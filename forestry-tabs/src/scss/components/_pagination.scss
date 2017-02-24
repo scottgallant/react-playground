@@ -1,0 +1,48 @@
+.pagination {
+  display: flex;
+  padding: 2em 0;
+  justify-content: center;
+  align-items: baseline;
+
+  ul.pagination {
+    color: $dark-grey;
+    display: flex;
+    align-items: baseline;
+
+    li.page-number {
+      font-size: $no-text;
+      line-height: 1.6em;
+      background-color: $lighter-grey;
+      color: $medium-grey;
+      padding: .6em .8em;
+      border-radius: $border-radius;
+      margin-right: 1em;
+      transition: background-color 100ms;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active { color: $dark-grey; }
+
+      &:hover {
+        background-color: $light-grey;
+        color: $dark-grey;
+      }
+
+    }
+
+  }
+
+  a.prev {
+    font-size: $sm-text;
+    margin-right: 2em;
+  }
+
+  a.next {
+    font-size: $sm-text;
+    margin-left: 2em;
+  }
+
+}

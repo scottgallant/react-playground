@@ -1,0 +1,99 @@
+// Tooltip Magic
+[data-tooltip] {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    display: none;
+    position: absolute;
+    bottom: 160%;
+    left: 50%;
+    padding: .8em 1.2em;
+    max-width: 240px;
+    transform: translateX(-50%);
+    border-radius: $tooltip-rounding;
+    white-space: nowrap;
+    color: $tooltip-text;
+    background-color: $tooltip-color;
+    pointer-events: none;
+    content: attr(data-tooltip);
+    font-size: $sm-text;
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  // Create a neat little arrow
+  &::before {
+    display: none;
+    position: absolute;
+    bottom: 160%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    background-color: $tooltip-color;
+    content: '';
+  }
+
+  // Activate tooltip
+  &:focus,
+  &:hover {
+
+    &::after,
+    &::before {
+      display: block;
+    }
+  }
+
+  // Different directions
+  &[data-side="right"] {
+    &::after,
+    &::before {
+      bottom: 50%;
+      left: 110%;
+      margin-left: 10px;
+    }
+
+    &::after {
+      transform: translate(0, 50%);
+    }
+
+    &::before {
+      transform: translate(-50%, 50%) rotate(135deg);
+    }
+  }
+
+  &[data-side="bottom"] {
+    &::after,
+    &::before {
+      bottom: auto;
+      top: 160%;
+    }
+
+    &::after {
+      transform: translate(-50%, 0);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(225deg);
+    }
+  }
+
+  &[data-side="left"] {
+    &::after,
+    &::before {
+      right: 110%;
+      bottom: 50%;
+      left: auto;
+      margin-right: 10px;
+    }
+
+    &::after {
+      transform: translate(0, 50%);
+    }
+
+    &::before {
+      transform: translate(50%, 50%) rotate(315deg);
+    }
+  }
+}

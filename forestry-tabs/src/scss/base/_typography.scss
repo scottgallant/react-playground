@@ -1,0 +1,81 @@
+// Font family
+$font-family-text: 'Open Sans', sans-serif;
+$font-family-code: 'Roboto Mono' monospace;
+
+// Text sizes
+
+// Base
+$base-font-size: 16px;
+$base-letter-spacing: .01em;
+
+// Scale
+$xxsm-text: .54rem;
+$xsm-text: .68rem;
+$sm-text: .7rem;
+$no-text: .8rem;
+$md-text: 1rem;
+$lg-text: 1.2rem;
+$xl-text: 2.4rem;
+
+// Line-heights
+h1,h2 {
+  line-height: 1.6em;
+}
+
+p,h3,h4,h5,h6 {
+  line-height: 1.5em;
+}
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Titles
+
+h1 {
+  font-size: $xl-text;
+  font-weight: 300;
+
+  // Fix title alignment
+  margin-left: -.08em;
+
+  &.title {
+    line-height: 1.2;
+    margin-top: -.2em;
+    padding-bottom: 1em;
+  }
+
+}
+
+h3 {
+  font-size: $no-text;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+}
+
+// Labels
+.label, label {
+  display: inline-block;
+  margin-bottom: 1.2em;
+  font-size: $sm-text;
+  text-transform: uppercase;
+  color: $medium-plus-grey;
+  font-weight: $font-weight-semibold;
+  letter-spacing: .03em;
+}
+
+// Error in text
+
+h1,h2,h3,h4,h5,h6,span,a,p {
+  &.error { color: $warning; }
+}
+
+.fake-link {
+  &:hover{
+      cursor: pointer;
+  }
+}

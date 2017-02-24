@@ -1,0 +1,140 @@
+.wrapper.login {
+  background: #333333;
+  overflow-y: scroll;
+
+  .login-form--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin: auto;
+
+    .login-form--logo {
+      height: 3rem;
+      margin-top: 3rem;
+
+      img {
+        height: 100%;
+      }
+
+    }
+
+    .login-form--card {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $white;
+      width: 42rem;
+      max-width: 90%;
+      padding: 2em 3em;
+      margin: 4rem 0;
+      border-radius: $border-radius;
+      box-shadow: 0 20px 40px -20px $black;
+
+      .login-form--form {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .login-form--field {
+          flex: 1;
+          margin-right: 2rem;
+
+          .label, label {
+            display: block;
+            margin-bottom: 1em;
+            margin-top: -.4em;
+          }
+
+          input {
+            padding: 0 0 .2em 0;
+          }
+
+        }
+
+        .login-form--button {
+          flex: 0 0 20%;
+          transition: transform 220ms ease;
+
+          &:hover { transform: scale(1.025); }
+
+          & button {
+            width: 100%;
+            font-size: $sm-text;
+          }
+
+        }
+
+        .alert {
+          width: 100%;
+          padding: 2rem 0 0 0;
+          font-size: $no-text;
+          color: $medium-plus-grey;
+        }
+
+      }
+
+    }
+
+    a.forgot-password {
+      color: $medium-grey;
+      font-size: $no-text;
+      margin-bottom: 3rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid darken($medium-grey, 50);
+      transition: border-color 320ms ease;
+      &:hover { border-color: $medium-grey; }
+    }
+
+    a.poweredby-forestry {
+      color: $medium-grey;
+
+      img { margin-bottom: 3rem; }
+
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width: $breakpoint-small) {
+
+  .wrapper.login {
+
+    .login-form--container {
+
+      .login-form--card {
+        width: 30rem;
+
+        .login-form--form {
+          flex-wrap: wrap;
+
+          .login-form--field {
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+          }
+
+          .login-form--button {
+            flex: 0 0 100%;
+          }
+
+          .alert {
+            font-size: $no-text;
+            color: $medium-plus-grey;
+            text-align: center;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,42 @@
+.site-elements {
+  margin-top: -.5em;
+
+  .element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 2em;
+  }
+
+  p.description {
+    font-size: $md-text;
+    padding-bottom: 1em;
+    max-width: 650px;
+    color: $medium-plus-grey;
+  }
+
+  .grid p:not(.description) {
+    background-color: $primary;
+    color: $white;
+    font-size: $sm-text;
+    padding: .5em 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: .15em;
+  }
+
+  .grid .column p:not(.description), .grid .column code {
+    margin-bottom: 2em;
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-large) {
+  .column.code { display: none; }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .grid .column.example {
+    padding-bottom: 0;
+  }
+}

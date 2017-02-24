@@ -1,0 +1,180 @@
+// Everything inside of a container will get padding
+
+.container {
+  padding: 2em 1em;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &.no-padding {
+    padding: 0 1em;
+  }
+
+}
+
+.section {
+  padding-bottom: 2em;
+}
+
+
+// Row
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 2em;
+  flex-wrap: wrap;
+
+  // Remove gutter
+  &.no-gutter .column { margin-right: 0; }
+
+  // Remove bottom padding
+  &.no-padding { padding-bottom: 0; }
+  &.container-padding { padding: 0 1em; }
+
+  // Horizontal positioning
+  &.space-between  { justify-content: space-between; }
+  &.space-around   { justify-content: space-around; }
+  &.center         { justify-content: center; }
+
+  // Vertical positioning
+  &.vertical-start { align-items: flex-start; }
+  &.vertical-center { align-items: center; }
+  &.vertical-end { align-items: flex-end; }
+
+}
+
+// Columns
+
+.column {
+  flex: 1;
+
+  // Todo: Should these be pre-pended with "column"? This is a convention bootstrap uses – e.g. ".column.column-is-half"
+  // Column sizes
+  &.is-full {
+    flex: 0 0 100%;
+  }
+
+  &.is-half {
+    flex: 0 0 50%;
+  }
+
+  &.is-two-third {
+    flex: 0 0 75%;
+  }
+
+  &.is-one-third {
+    flex: 0 0 33.333%;
+  }
+
+  &.is-one-quarter {
+    flex: 0 0 25%;
+  }
+
+  // Remove padding
+  &.no-padding {
+    padding: 0;
+  }
+
+  // Text alignment
+  &.text-centered { text-align: center; }
+  &.text-right { text-align: right; }
+
+}
+
+[class^="column"] {
+  padding: 0 1em;
+}
+
+// Breakpoints
+
+
+@media screen and (max-width: $breakpoint-large) {
+
+  .column {
+    flex: 0 0 50%;
+    &.is-one-quarter {
+      flex: 0 0 50%;
+    }
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-small) {
+
+  .row {
+    padding-bottom: 0;
+  }
+
+  .column {
+
+    &.is-two-third {
+      flex: 0 0 100%;
+    }
+
+    &.is-half {
+      flex: 0 0 50%;
+    }
+
+    &.is-one-third {
+      flex: 0 0 50%;
+    }
+
+    &.is-one-quarter {
+      flex: 0 0 50%;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-smallest) {
+
+  .column {
+    flex: 0 0 100%;
+
+    &.is-half {
+      flex: 0 0 100%;
+    }
+
+    &.is-one-third {
+      flex: 0 0 100%;
+    }
+
+    &.is-one-quarter {
+      flex: 0 0 100%;
+    }
+
+  }
+
+}
+
+
+// Grid helpers
+
+.row {
+
+  &.mark {
+    border: 1px dashed $dark-grey;
+
+    &:hover {
+      border: 1px dashed $primary;
+      background-color: $light-grey;
+    }
+
+  }
+
+}
+
+.column {
+
+  &.mark {
+    border: 1px dashed $dark-grey;
+
+    &:hover {
+      border: 1px dashed $primary;
+      background-color: $light-grey;
+    }
+
+  }
+
+}

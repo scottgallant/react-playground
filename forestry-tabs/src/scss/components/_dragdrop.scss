@@ -1,0 +1,53 @@
+.dragdrop-field {
+  background-color: $light-grey;
+  text-align: center;
+  height: 180px;
+  position: relative;
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+
+  // Dotted line
+  &:before, &:after {
+    content: "";
+    display: block;
+    width: calc(100% - 1em);
+    height: calc(100% - 1em);
+    position: absolute;
+  }
+
+  &:before { border: 1px dashed $medium-grey; }
+
+  &:hover { background-color: lighten($light-grey, 1.5); }
+
+  .drop-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: $sm-text;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      color: darken($medium-grey, 40);
+    }
+
+    p {
+      font-size: $xxsm-text;
+      text-transform: uppercase;
+      color: darken($medium-grey, 40);
+      opacity: .8;
+      margin-bottom: .5em;
+    }
+
+    svg {
+      display: block;
+      font-size: 30px;
+    }
+
+  }
+
+}

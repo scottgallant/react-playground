@@ -1,0 +1,44 @@
+// Switch
+.switch {
+  position:relative;
+  width:3.6em;
+  height:1.4em;
+  background: $light-grey;
+  user-select:none;
+  border-radius: $border-radius;
+
+  input {
+    display:none;
+
+    &:checked + label .card {
+      background: $primary;
+      transform:translateX(100%);
+    }
+
+    &:valid ~ label {
+      top: 0;
+    }
+
+  }
+
+  label {
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    cursor:pointer;
+    pointer-events: all;
+    top: inherit;
+
+    .card {
+      position:relative;
+      background: $medium-grey;
+      transition: transform 320ms ease;
+      width:50%;
+      height:100%;
+      pointer-events:none;
+      border-radius: $border-radius;
+      transform:translate(0);
+    }
+
+  }
+
+}

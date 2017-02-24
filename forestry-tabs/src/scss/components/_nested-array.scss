@@ -1,0 +1,101 @@
+// Todo: edit-page--list-container => sortable-list
+.form-field.edit-page--list-container {
+  background: $light-grey;
+  border-radius: $border-radius;
+  padding: 2em 1em;
+  margin-bottom: 2em;
+
+  // Todo: edit-page--list-header => sortable-list-header
+  .edit-page--list-header {
+    display: flex;
+    align-items: center;
+
+    .add-item {
+      font-size: $no-text;
+      cursor: pointer;
+      margin-left: auto;
+
+      span { margin-left: .5em; }
+
+    }
+
+  }
+
+  .edit-page--list-parent {
+
+    // Todo: edit-page--list-item => sortable-list-item
+    .edit-page--list-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: $white;
+      margin: .5em 0;
+      border-radius: $border-radius;
+      transition: background 200ms ease;
+
+      p {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 1em;
+      }
+
+      small {
+        display: block;
+        color: $medium-grey;
+      }
+
+      .move-icon {
+        padding-left: 1em;
+        opacity: .25;
+        transition: opacity .2s ease;
+        &:hover {
+          opacity: 1;
+          cursor: move;
+        }
+      }
+
+      .delete {
+        opacity: .25;
+        transition: opacity 200ms ease;
+        padding-right: 1em;
+        &:hover { opacity: 1; }
+      }
+
+      &:hover {
+        background: darken($white, 1);
+        cursor: pointer;
+      }
+
+    }
+
+    .list-item-dragging {
+      opacity: 0.5;
+      background-color: #58909a;
+      font-style: italic;
+      font-size: 25px;
+      border-color: #97E6B1;
+      padding: 20px;
+      border-radius: .50rem;
+      color: #DD1144;
+      float: right;
+    }
+
+  }
+
+}
+
+// Todo: Move somewhere else
+.edit-page--back-button {
+  display: block;
+  font-size: $no-text;
+  font-weight: $font-weight-semibold;
+  margin: 0 0 2rem -5px;
+  padding: .8em 1.4em;
+  border-radius: $border-radius;
+  background: $dark-grey;
+  color: $white;
+
+  i { margin-right: .25em; }
+
+}
